@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> My First Website</title>
-  </head>
-  <body>
-    <h1>Hello, Web!</h1>
-    <p>This site is live.</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Example Page</title>
+    <style>
+        /* Simple CSS to make it look modern */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* GitHub Dark Theme Background */
+            color: #c9d1d9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        h1 {
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hello, World!</h1>
+        <p>Welcome to my GitHub Pages example site.</p>
+    </header>
+
+    <div class="container">
+        <h2>About This Project</h2>
+        <p>This is a simple, single-file HTML template designed to show how GitHub Pages works. It uses internal CSS, meaning you don't need a separate stylesheet!</p>
+        
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Responsive design (looks good on mobile).</li>
+            <li>No external dependencies (fast loading).</li>
+            <li>GitHub-inspired color palette.</li>
+        </ul>
+
+        <a href="https://github.com/your-username" class="btn">View My Profile</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Built with ☕ and Code.
+    </footer>
+
+</body>
 </html>
