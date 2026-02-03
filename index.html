@@ -3,158 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trailblazer | Astral Express Profile</title>
+    <title>Farmer's Profile | Stardew Valley</title>
     <style>
+        /* Stardew Color Palette */
         :root {
-            --space-dark: #060b14;
-            --stellar-gold: #f4d06f;
-            --astral-blue: #00bcd4;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --border-glow: rgba(244, 208, 111, 0.3);
+            --wood-dark: #633520;
+            --wood-light: #a05a2c;
+            --parchment: #fcf1cc;
+            --border-outer: #3a1f14;
+            --text-main: #5d2e1d;
+            --header-bg: #ffcc33;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at top, #1a2a44 0%, #060b14 100%);
-            color: #e0e0e0;
+            background-color: #4b8bad; /* Summer Sky Blue */
+            /* Adding a simple grass/dirt floor effect */
+            background-image: linear-gradient(#4b8bad 70%, #5cb85c 70%, #5cb85c 100%);
+            font-family: 'Courier New', Courier, monospace; /* Closest to pixel font */
+            color: var(--text-main);
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            margin: 0;
         }
 
-        /* Subtle moving stars background effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.3;
-            z-index: -1;
-        }
-
-        header {
+        /* The Main Menu Box */
+        .menu-box {
+            background-color: var(--wood-light);
+            border: 6px solid var(--border-outer);
+            box-shadow: inset -4px -4px 0px 2px var(--wood-dark);
+            padding: 10px;
+            width: 350px;
             text-align: center;
-            padding: 5rem 1rem 2rem;
+            image-rendering: pixelated;
+        }
+
+        .inner-parchment {
+            background-color: var(--parchment);
+            border: 4px solid var(--wood-dark);
+            padding: 20px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
         }
 
         h1 {
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--stellar-gold);
-            text-shadow: 0 0 15px rgba(244, 208, 111, 0.6);
-            margin: 0;
-        }
-
-        .subtitle {
-            color: var(--astral-blue);
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 20px;
-            padding: 30px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px); /* The "Glass" effect */
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--border-glow);
-            border-radius: 4px; /* Sharp, geometric look */
-            position: relative;
-            clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
-        }
-
-        .container::after {
-            content: "";
-            position: absolute;
-            top: 0; right: 0;
-            width: 40px; height: 40px;
-            border-right: 2px solid var(--stellar-gold);
-            border-top: 2px solid var(--stellar-gold);
-        }
-
-        h2 {
-            border-left: 4px solid var(--stellar-gold);
-            padding-left: 15px;
-            font-weight: 300;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .stat-box {
-            background: rgba(0, 0, 0, 0.4);
+            font-size: 1.5rem;
+            margin-top: 0;
+            background: #e9913a;
+            color: white;
             padding: 10px;
-            border: 1px solid #333;
-            font-size: 0.9rem;
+            border: 4px solid var(--border-outer);
+            text-shadow: 2px 2px var(--border-outer);
         }
 
-        .stat-label { color: #888; display: block; font-size: 0.7rem; text-transform: uppercase; }
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            background: #90c0ff;
+            border: 4px solid var(--wood-dark);
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
 
+        .stats-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .stats-list li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .stats-list li::before {
+            content: "⭐";
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* The Classic Stardew Button */
         .btn {
             display: block;
-            text-align: center;
-            background: linear-gradient(90deg, #f4d06f 0%, #d4af37 100%);
-            color: #000;
-            padding: 12px 24px;
+            background-color: #ffcc33;
+            border: 4px solid var(--border-outer);
+            box-shadow: inset -4px -4px 0px #d4a017;
+            color: var(--text-main);
+            padding: 10px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 30px;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 15px;
+            transition: transform 0.1s;
         }
 
         .btn:hover {
+            background-color: #ffe066;
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(244, 208, 111, 0.4);
         }
 
-        footer {
-            margin-top: auto;
-            padding: 2rem;
-            font-family: monospace;
-            color: var(--astral-blue);
-            opacity: 0.6;
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: inset 4px 4px 0px #d4a017;
+        }
+
+        .footer-note {
+            font-size: 0.7rem;
+            margin-top: 15px;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <p class="subtitle">DATA BANK ACCESS</p>
-        <h1>TRAILBLAZER</h1>
-    </header>
+    <div class="menu-box">
+        <div class="inner-parchment">
+            <h1>New Farmer</h1>
+            
+            <div class="profile-img">🧑‍🌾</div>
 
-    <div class="container">
-        <h2>Personnel Report</h2>
-        <p>Current Mission: Exploring the vast repositories of GitHub and building the ultimate landing page.</p>
-        
-        <div class="stats-grid">
-            <div class="stat-box">
-                <span class="stat-label">Path</span>
-                <span>The Erudition</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-label">Combat Type</span>
-                <span>Imaginary (Code)</span>
-            </div>
+            <ul class="stats-list">
+                <li>Farm: GitHub Acres</li>
+                <li>Favorite: Coding</li>
+                <li>Skill: Level 10 Web Dev</li>
+            </ul>
+
+            <p style="font-size: 0.9rem;">"The grandfather's letter is waiting for you in the repository..."</p>
+
+            <a href="https://github.com/your-username" target="_blank" class="btn">CHECK SOCIALS</a>
+            <a href="#" class="btn">VIEW INVENTORY</a>
+
+            <div class="footer-note">Weather tomorrow: Sunny</div>
         </div>
-
-        <a href="https://github.com/your-username" target="_blank" class="btn">ENTER THE DATA BANK</a>
     </div>
-
-    <footer>
-        [ SYSTEM STATUS: ONLINE ] - May this journey lead us starward.
-    </footer>
 
 </body>
 </html>
